@@ -1,0 +1,213 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>	
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src='build/pdfmake.min.js'></script>
+<script src='build/vfs_fonts.js'></script>
+<style> 
+h1 {text-align: center;}
+h3 {text-align: center;}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* Style the header */
+header {
+  background-color: #6495ED;
+  padding: 10px;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  
+}
+
+a:link {
+  color: darkblue;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: purple;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.collapsible {
+  background-color: #C0C0C0;
+  color: black;
+  cursor: pointer;
+  padding: 10px;
+  width: 75%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  margin:auto;
+  display:block;
+}
+
+.active, .collapsible:hover {
+  background-color: lightblue;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+
+<header>
+<h1>Frequently Asked Questions for the EPI/PEI Enzyme Calculator</h1>
+</header>
+<section>
+    <nav> 
+        <a href="index.html"><h4>Click here to go back to the calculator page</h4></a>
+    </nav>
+
+<article>
+
+    <div class="center">
+        <button type="button" class="collapsible">What is the purpose of this calculator?</button>
+        <div class="content" style="text-align: center;">
+            <p> This calculator is designed to assist people living with exocrine pancreatic insufficiency (EPI or PEI) to estimate their required dosing of pancrelipase or other supplemental enzymes.</p>
+        </div>	
+        <button type="button" class="collapsible">Why use this tool?</button>
+        <div class="content" style="text-align: center;">
+            <p> If you are wondering when (what size meals) you should take “more” pancrelipase for..and how to figure out how much “more” to take, this tool might help you estimate that.</p>
+        </div>
+        <button type="button" class="collapsible">Is it perfect?</button>
+        <div class="content">
+            <p>Definitely not. But it might help you more than guessing wildly whether to take 1-2 more pills (or more) for a “bigger” meal.</p>
+            <p>One of the reasons it’s not perfect is because it has not yet been tested in a research study. It assumes that the ratios are linear; so if one pill covers 15g of fat, two cover 30g, three cover 45g…eight pills cover 120g of fat, etc.</p>
+            <p>Scientists and we (us patients) don’t know yet if that’s true. But, in personal experience, eating something like 120g of fat takes more than “one more” pill for whatever amount covers a 30g of fat meal. So when you are going from a normal size meal (for you) to a much larger size meal (for you) in terms of grams of fat and/or protein, this tool, while not perfect, may help provide a starting point to estimate how many pills you might want to take.</p>
+        </div>
+        <button type="button" class="collapsible">How does it work? How does it calculate the numbers?</button>
+        <div class="content">
+            <p>This tool first calculates, based on the meal you give it (via the quantities of fat and protein), a ratio of how much 1000 units of lipase and protease each covers in terms of grams of fat and protein.</p>
+ 
+            <pre>
+            (Meal that the dose covers in grams of fat)
+            ————————————————-------------------------------  x 1000 
+            ((No. Of Pills) x (amount of lipase per pill))
+            </pre>
+            
+            Then, when you provide a new meal to estimate, it uses those to calculate the new dose needed - based on your individualized ratio.
+            
+            <pre>
+                (New meal in grams of fat) x ratio x 1000
+            </pre>
+
+            <p><b>For example:</b></p>
+
+            <p>You entered that you take 4 pills of Creon 36000 and it typically covers a meal of 60 grams fat and 40 grams of protein.</p>
+
+            This tool looks up that Creon 36000 contains 36,000 units of lipase; 114,000 units of protease; and 118,000 units of amylase.
+            
+            <pre>
+                4 (pills) x 36,000 is 144,000 units of lipase.
+                4 (pills) x 114,000 is 456,000 units of protease.
+            </pre>
+            
+            <p> The tool takes your meal (60g fat, 40g protein) and divides it to determine that for every 1000 units of lipase it covers 0.416 grams of fat; which means one pill (36,000 units of lipase) covers 15 grams of fat. The same is calculated for protein and protease: every 1000 units of protease covers 0.088 grams of protein, which means one pill (144,000 units of protease) covers 10 grams of protein.</p>
+            
+            <p>You can use this knowledge manually; going from a meal of 60g of fat to 75g of fat would be “one more” pill because it covers around 15g of fat. But 80g of fat is more than 15g more than 60g, so while you might need 5 pills for 75g of fat, you may need 6 pills at 80g of fat. What if you are eating a lot of pizza or a similar meal with a lot of fat around 125g of fat? It would, based on the above inputs, suggest 9 pills are needed.</p>
+            
+            <p>Similarly, a meal might have more protein, and you can use the ratio to determine how much more pills worth of protease is needed.</p>
+            
+            <p>The tool compares the number of pills estimated to cover the lipase and protease needed for the new meal, then provides the larger number (which then covers both amounts). This is the final recommendation from the estimator.</p>
+
+        </div>
+        <button type="button" class="collapsible">What about carbohydrates and amylase? Why aren't they included?</button>
+        <div class="content">
+            <p>I observe that most people are sensitive to fat, or fat and protein, but don't have any evidence that people are as sensitive to amylase needs and calculating carbohydrates. However, if you are, let me know and I can add it in!</p>
+        </div>
+     </div>
+
+
+
+</article>
+</section>
+<footer>
+	<p style="text-align: center;"><b>Note</b>: this is not medical advice. Use at your own risk.</p>
+
+	<p style="text-align: center;"> For more details about the idea behind this calculator, <a href="https://bit.ly/3fAUFfJ">read this post</a>.</p>
+</footer>
+
+<script>
+	var coll = document.getElementsByClassName("collapsible");
+	var i;
+	
+	for (i = 0; i < coll.length; i++) {
+	  coll[i].addEventListener("click", function() {
+		this.classList.toggle("active");
+		var content = this.nextElementSibling;
+		if (content.style.display === "block") {
+		  content.style.display = "none";
+		} else {
+		  content.style.display = "block";
+		}
+	  });
+	}
+</script>
