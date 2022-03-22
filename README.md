@@ -21,3 +21,8 @@ For more details about the idea behind this calculator, read this post: https://
 PRs are very welcome! 
 
 Note: you may need to install pdfMake in order to test/use the 'download PDF' functionality. You can use   `npm install pdfmake`, then make sure to copy the 'build' folder into your folder of this content in order for it to work. (More pdfMake documentation is [here](https://pdfmake.github.io/docs/0.1/getting-started/client-side/).) 
+
+### Roadmap / TO DO
+
+ - [ ] Under Part 2, add in an option to consider supplemental OTC enzymes (e.g. lipase only, or multi-enzyme) for recommending output amounts
+ - [ ] Improve the design of the generated PDF report
