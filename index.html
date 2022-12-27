@@ -468,6 +468,7 @@ function newmealQuantitiesNeeded(lipaseRatio, proteaseRatio, NewMealPancrelipase
 	newmealProteasePillsNeeded = parseFloat(newmealProteasePillsNeeded);
 	newmealProteasePillsNeeded = Math.ceil(newmealProteasePillsNeeded);
 	document.getElementById("newmealProteaseCalculation").innerHTML = "You will need an estimated " + newmealProteaseNeeded.toFixed(0).bold() + " units of protease to cover " + newmealProtein.toFixed(0).bold() + " grams of protein.";
+	document.getElementById("newmealProteasePillSize").innerHTML = "Each " + newmealPillSize.bold() + " pill contains " + protease.toFixed(0).bold() + " units of protease.";
 	document.getElementById("newmealProteasePillsCalculation").innerHTML = "This means " + newmealProteasePillsNeeded.toFixed(0).bold() + " of " + newmealPillSize.bold() + " are needed to cover " + newmealProteaseNeeded.toFixed(0).bold() + " units of protease.";
 
 	// compare newmealProteasePillsNeeded and newmealLipasePillsNeeded and select the largest number of pills needed
@@ -501,6 +502,7 @@ function newmealQuantitiesNeeded(lipaseRatio, proteaseRatio, NewMealPancrelipase
 	<p id="newmealLipaseCalculation"></p> 
 	<p id="newmealLipasePillsCalculation"></p>
 	<p id="newmealProteaseCalculation"></p>
+	<p id="newmealProteasePillSize"></p>
 	<p id="newmealProteasePillsCalculation"></p>
 
 </div>	
