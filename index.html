@@ -273,9 +273,9 @@ function calculateLipaseRatio() {
 	var lipaseTotal = lipaseTotal * document.getElementById("number-of-pills").value;
 	var lipaseTotal = lipaseTotal / 1000;
 	var gramsoffat = document.getElementById("grams-of-fat").value;
-	lipaseRatio = gramsoffat / lipaseTotal;
-	document.getElementById("lipaseratioresults").innerHTML = "The lipase to fat ratio is " + lipaseRatio.toFixed(3).bold() + " (grams of fat to 1000 units of lipase).";
-	var onepillLipase = lipaseRatio * lipaseTotal / document.getElementById("number-of-pills").value;
+	lipaseRatio = lipaseTotal / gramsoffat;
+	document.getElementById("lipaseratioresults").innerHTML = "The lipase to fat ratio is " + lipaseRatio.toFixed(3).bold() + " (units of lipase per gram of fat).";
+	var onepillLipase = lipaseTotal / lipaseRatio / document.getElementById("number-of-pills").value;
 	document.getElementById("onepillLipase").innerHTML = "One pill of " + doseName.bold() + " covers an estimated " + onepillLipase.toFixed(1).bold() + " grams of fat.";  
 	var lipaseRatioHash = {
 		lipaseRatio: lipaseRatio,
@@ -343,9 +343,9 @@ function calculateProteaseRatio() {
 	var amylaseTotal = amylase * document.getElementById("number-of-pills").value;
 	var proteaseTotal = proteaseTotal / 1000;
 	var gramsofprotein = document.getElementById("grams-of-protein").value;
-	proteaseRatio = gramsofprotein / proteaseTotal;
-	document.getElementById("proteaseratioresults").innerHTML = "The protease to protein ratio is " + proteaseRatio.toFixed(3).bold() + " (grams of protein to 1000 units of protease).";	
-	var onepillProtease = proteaseRatio * proteaseTotal / document.getElementById("number-of-pills").value;
+	proteaseRatio = proteaseTotal / gramsofprotein;
+	document.getElementById("proteaseratioresults").innerHTML = "The protease to protein ratio is " + proteaseRatio.toFixed(3).bold() + " (units of protease per gram of protein).";	
+	var onepillProtease = proteaseTotal / proteaseRatio / document.getElementById("number-of-pills").value;
 	document.getElementById("onepillProtein").innerHTML = "One pill of " + doseName.bold() + " covers an estimated " + onepillProtease.toFixed(1).bold() + " grams of protein.";  
 	var proteaseRatioHash = {
 		proteaseRatio: proteaseRatio,
