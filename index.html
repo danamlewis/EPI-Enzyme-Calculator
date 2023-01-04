@@ -150,8 +150,10 @@ a:visited {
   <option value="" selected>Select Pancrelipase Type</option>
   <option value="Creon 3000">Creon 3000</option>
   <option value="Creon 6000">Creon 6000</option>
+  <option value="NZ Creon 10000 - different units for protease and amylase">NZ Creon 10000</option>
   <option value="Creon 12000">Creon 12000</option>
   <option value="Creon 24000">Creon 24000</option>
+  <option value="NZ Creon 25000 - different units for protease and amylase">NZ Creon 25000</option>
   <option value="Creon 36000">Creon 36000</option>
   <option value="Zenpep 3000">Zenpep 3000</option>
   <option value="Zenpep 5000">Zenpep 5000</option>
@@ -198,6 +200,10 @@ function defineallvariablesizes() {
 	  var protease = 19000;
 	  var amylase = 30000;
   }
+  else if (doseName == "NZ Creon 10000 - different units for protease and amylase") {
+	  var protease = 600;
+	  var amylase = 8000;
+  }
   else if (doseName == "Creon 12000") {
 	  var protease = 38000;
 	  var amylase = 60000;
@@ -205,6 +211,10 @@ function defineallvariablesizes() {
   else if (doseName == "Creon 24000") {
 	  var protease = 76000;
 	  var amylase = 120000;
+  }
+  else if (doseName == "NZ Creon 25000 - different units for protease and amylase") {
+	  var protease = 1000;
+	  var amylase = 18000;
   }
   else if (doseName == "Creon 36000") {
 	  var protease = 114000;
@@ -297,6 +307,10 @@ function calculateProteaseRatio() {
 	  var protease = 19000;
 	  var amylase = 30000;
   }
+  else if (doseName == "NZ Creon 10000 - different units for protease and amylase") {
+          var protease = 600;
+          var amylase = 8000;
+  }
   else if (doseName == "Creon 12000") {
 	  var protease = 38000;
 	  var amylase = 60000;
@@ -304,6 +318,10 @@ function calculateProteaseRatio() {
   else if (doseName == "Creon 24000") {
 	  var protease = 76000;
 	  var amylase = 120000;
+  }
+  else if (doseName == "NZ Creon 25000 - different units for protease and amylase") {
+          var protease = 1000;
+          var amylase = 18000;
   }
   else if (doseName == "Creon 36000") {
 	  var protease = 114000;
@@ -376,8 +394,10 @@ function calculateProteaseRatio() {
   <option value="" selected>Select Pancrelipase Type</option>
   <option value="Creon 3000">Creon 3000</option>
   <option value="Creon 6000">Creon 6000</option>
+  <option value="NZ Creon 10000 - different units for protease and amylase">NZ Creon 10000</option>
   <option value="Creon 12000">Creon 12000</option>
   <option value="Creon 24000">Creon 24000</option>
+  <option value="NZ Creon 25000 - different units for protease and amylase">NZ Creon 25000</option>
   <option value="Creon 36000">Creon 36000</option>
   <option value="Zenpep 3000">Zenpep 3000</option>
   <option value="Zenpep 5000">Zenpep 5000</option>
@@ -401,6 +421,10 @@ function newmealQuantitiesNeeded(lipaseRatio, proteaseRatio, NewMealPancrelipase
 	  var protease = 19000;
 	  var amylase = 30000;
   }
+  else if (doseName == "NZ Creon 10000 - different units for protease and amylase") {
+          var protease = 600;
+          var amylase = 8000;
+  }
   else if (doseName == "Creon 12000") {
 	  var protease = 38000;
 	  var amylase = 60000;
@@ -408,6 +432,10 @@ function newmealQuantitiesNeeded(lipaseRatio, proteaseRatio, NewMealPancrelipase
   else if (doseName == "Creon 24000") {
 	  var protease = 76000;
 	  var amylase = 120000;
+  }
+  else if (doseName == "NZ Creon 25000 - different units for protease and amylase") {
+          var protease = 1000;
+          var amylase = 18000;
   }
   else if (doseName == "Creon 36000") {
 	  var protease = 114000;
